@@ -21,6 +21,12 @@ type InputTy = {
   text?: string;
 };
 
+const staticInput: InputTy = {
+  integer: 4,
+  float: 4,
+  text: "HackerRank",
+};
+
 type ResponseTy = InputTy & {
   float: string;
 };
@@ -33,11 +39,10 @@ const inicializateInput = (input: InputTy) => {
 };
 
 const createResponse = ({ integer, float, text }: InputTy): ResponseTy => {
-  const hackerRankText = "HackerRank";
   return {
-    integer: Math.ceil(integer + float),
-    text: `${hackerRankText} ${text}`,
-    float: (float + float).toFixed(1),
+    integer: Math.round(integer + staticInput.integer),
+    text: `${staticInput.text} ${text}`,
+    float: (float + staticInput.float).toFixed(1),
   } as ResponseTy;
 };
 
@@ -56,3 +61,13 @@ function main() {
   const response: ResponseTy = createResponse(input);
   logOutput(response);
 }
+
+// Entrada esperada
+// 12
+// 4.0
+// is the best place to learn and practice coding!
+
+// Saída esperada
+// 12
+// 4.0
+// is the best place to learn and practice coding!
