@@ -7,6 +7,8 @@ class LoggerSingleton {
   private isStart = true;
   private methodName: string = "";
   private ms: number = 0;
+
+  
   startAndEnd(methodName: string = "", ms?: number): void {
     if (isBlank(this.methodName)) {
       this.methodName = methodName;

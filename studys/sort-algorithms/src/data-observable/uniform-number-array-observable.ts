@@ -4,6 +4,7 @@ import { IObserver } from "./type/IObserver";
 export class UniformNumberArrayObservable implements IObservable {
   private data: number[] = [];
   private observers: IObserver[] = [];
+  
   subscribe(observer: IObserver<unknown, void>): void {
     this.observers.push(observer);
   }
