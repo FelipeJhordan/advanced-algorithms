@@ -4,7 +4,7 @@ import { IObserver } from "./type/IObserver";
 export class NumberArrayObservable implements IObservable {
   private data: number[] = [];
   private observers: IObserver[] = [];
-  
+
   subscribe(observer: IObserver<unknown, void>): void {
     this.observers.push(observer);
   }
@@ -18,7 +18,7 @@ export class NumberArrayObservable implements IObservable {
   }
 
   notify(data?: number[]): void {
-    if (data && data.length > 0) this.setData(data);
+    if (!data || data.length < 1) this.setData(data);
     this.observers.forEach((observer) => observer.update(this.data));
   }
 

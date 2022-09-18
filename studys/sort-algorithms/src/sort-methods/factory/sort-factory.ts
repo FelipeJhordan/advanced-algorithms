@@ -1,3 +1,4 @@
+import { BubbleMethod } from "../methods/bubble-method";
 import { BucketMethod } from "../methods/bucket-method";
 import { DefaultSortMethod } from "../methods/default-sort-method";
 import { ISortFactory } from "../types/ISortFactory";
@@ -8,6 +9,8 @@ export class SortFactory implements ISortFactory {
     switch (sortMethodName) {
       case "bucket":
         return new BucketMethod();
+      case "bubble":
+        return new BubbleMethod();
 
       default:
         return new DefaultSortMethod();
