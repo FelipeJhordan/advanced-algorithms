@@ -51,8 +51,8 @@ class LoggerSingleton {
   showOrderArrayAndNewArray(olderArray: any[], newArray: any[]) {
     console.log(`\n\t${chalk.bold.magenta("RESULTADO")}`);
     console.table({
-      ArrayAntigo: olderArray,
-      Resultado: newArray,
+      ArrayAntigo: olderArray.length > 30 ? olderArray.slice(0, 30) : olderArray,
+      Resultado: newArray.length > 30 ? newArray.slice(0, 30) : newArray,
     });
   }
 }
