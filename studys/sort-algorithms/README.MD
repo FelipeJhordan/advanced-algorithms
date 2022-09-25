@@ -3,7 +3,7 @@
 ## List
 
 - Selection Sort []
-- Bubble Sort []
+- Bubble Sort [X]
 - Insertion Sort []
 - Merge Sort []
 - Quick Sort []
